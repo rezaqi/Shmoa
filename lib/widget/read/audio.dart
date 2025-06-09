@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimoa/controller/read/audio_controller.dart';
@@ -34,13 +35,13 @@ class _NovelAudioPlayerState extends State<NovelAudioPlayer> {
     return Consumer<AudioNovelController>(
       builder: (context, controller, child) {
         return SizedBox(
-          width: 300,
-          height: 50,
+          width: 300.w,
+          height: 30.h,
           child: Column(
             children: [
               Container(
-                width: 300,
-                height: 10,
+                width: 270.w,
+                height: 10.h,
                 decoration: BoxDecoration(
                   color: AppColor.colorSec,
                   borderRadius: BorderRadius.circular(20),
@@ -63,9 +64,15 @@ class _NovelAudioPlayerState extends State<NovelAudioPlayer> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // position song
-                  Text(formaTime(controller.currentDuration)),
+                  Text(
+                    formaTime(controller.currentDuration),
+                    style: TextStyle(color: AppColor.name),
+                  ),
                   // end song
-                  Text(formaTime(controller.totalDuration))
+                  Text(
+                    formaTime(controller.totalDuration),
+                    style: TextStyle(color: AppColor.name),
+                  )
                 ],
               )
             ],

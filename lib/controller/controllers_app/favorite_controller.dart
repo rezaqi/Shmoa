@@ -31,14 +31,20 @@ class FavoriteControllerImp extends FavoriteController {
 
   initialData() async {
     statusRequest = StatusRequest.loading;
+    update();
     novels = myServices.sharedPref.getStringList("novels");
     k = myServices.sharedPref.getStringList("fav");
     print("__________________________fav_________________________");
-    if (k!.isNotEmpty) {
-      fav = k!.join(",");
+    if (k != null) {
+      if (k!.isNotEmpty) {
+        fav = k!.join(",");
+      }
+      print(k!.join(","));
+      getFav(k!.join(","));
+    } else {
+      statusRequest = StatusRequest.empty;
+      update();
     }
-    print(k!.join(","));
-    getFav(k!.join(","));
   }
 
   @override

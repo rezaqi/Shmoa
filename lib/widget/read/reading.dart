@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimoa/controller/read/read_controller.dart';
 import 'package:shimoa/core/constant/colors.dart';
 
@@ -20,19 +20,19 @@ class Reading extends StatelessWidget {
               Text(
                 c.novelParts[i].replaceAll('^', '\n'),
                 textAlign: TextAlign.end,
-                style: const TextStyle(
-                    color: AppColor.title, fontSize: 20, height: 2),
+                style: TextStyle(
+                    color: AppColor.title, fontSize: 19.sp, height: 1.5.h),
               ),
               if (i < c.novelParts.length - 1)
                 Container(
-                  margin: EdgeInsets.only(right: 60),
+                  margin: EdgeInsets.only(right: 30.w),
                   alignment: Alignment.centerRight,
                   child: Text(
                     "${i + 1}",
                     style: TextStyle(
                       fontFamily: "Monoton",
                       color: AppColor.title,
-                      fontSize: Get.size.height / 15,
+                      fontSize: 50.sp,
                     ),
                   ),
                 )

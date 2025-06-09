@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shimoa/controller/home/abn_controller.dart';
@@ -17,13 +18,13 @@ class HomeAbn extends StatelessWidget {
         children: [
           abnC.listPage.elementAt(abnC.currentPage),
           Positioned(
-            bottom: 10,
+            bottom: 5.h,
             child: Container(
               decoration: BoxDecoration(
                   color: AppColor.colorSec,
-                  borderRadius: BorderRadius.circular(80)),
-              height: 100,
-              width: 350,
+                  borderRadius: BorderRadius.circular(80.r)),
+              height: 70.h,
+              width: 300.w,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -93,12 +94,12 @@ class _CustomAnbState extends State<CustomAnb>
         widget.c.goToPage(widget.current);
       },
       child: AnimatedContainer(
-        height: 80,
-        width: widget.i ? 80 : 60,
+        height: 60.h,
+        width: widget.i ? 60.w : 40.w,
         curve: Curves.linear,
         duration: Duration(seconds: 1),
         alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(horizontal: Get.width / 40),
+        margin: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
           borderRadius:
               widget.i ? BorderRadius.circular(50) : BorderRadius.circular(50),
@@ -108,8 +109,8 @@ class _CustomAnbState extends State<CustomAnb>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                height: widget.i ? 45 : 40,
-                width: widget.i ? 45 : 40,
+                height: widget.i ? 40.h : 30.h,
+                width: widget.i ? 45.w : 40.w,
                 child: Lottie.asset(
                   widget.icon,
                   controller: _controller,

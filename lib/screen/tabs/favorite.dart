@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:shimoa/controller/controllers_app/favorite_controller.dart';
@@ -36,6 +37,7 @@ class _TopMoreState extends State<Favorite>
     _controller.dispose();
     super.dispose();
   }
+
 //////////////////////end animtion
 
   @override
@@ -51,7 +53,7 @@ class _TopMoreState extends State<Favorite>
       color: AppColor.colorSec,
       animSpeedFactor: 5,
       showChildOpacityTransition: false,
-      height: Get.height / 5,
+      height: 100.h,
       // scaffold
       child: Scaffold(
         appBar: AppBar(

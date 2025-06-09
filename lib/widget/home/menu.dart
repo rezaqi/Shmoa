@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shimoa/core/constant/colors.dart';
 import 'package:shimoa/core/constant/routs_name.dart';
@@ -10,78 +11,80 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        color: AppColor.colorSec,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 100),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomMenu(
-                ontap: () {
-                  Get.offAllNamed(AppRouts.homeAbn);
-                },
-                w: Get.width / 1.4,
-                title: "القائمة الرائسية",
-                icon: Icons.home_outlined,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.fav);
-                },
-                w: Get.width / 1.5,
-                title: "المفضلات",
-                icon: Icons.favorite_border,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.save);
-                },
-                w: Get.width / 1.6,
-                title: "المحفوظات",
-                icon: Icons.bookmark_outline_outlined,
-              ),
-              CustomMenu(
-                ontap: ontapSuggest,
-                w: Get.width / 1.75,
-                title: "القصص",
-                icon: Icons.menu_book_rounded,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.prophet);
-                },
-                w: Get.width / 1.95,
-                title: "قبل الميلاد",
-                icon: Icons.auto_awesome,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.messanger);
-                },
-                w: Get.width / 2.2,
-                title: "الرسل",
-                icon: Icons.auto_awesome,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.child);
-                },
-                w: Get.width / 2.5,
-                title: "الاطفال",
-                icon: Icons.child_care_sharp,
-              ),
-              CustomMenu(
-                ontap: () {
-                  Get.toNamed(AppRouts.aboutme);
-                },
-                w: Get.width / 2.9,
-                title: "عنى",
-                icon: Icons.error,
-              )
-            ],
-          ),
-        ));
+    return SafeArea(
+      child: Container(
+          width: double.infinity,
+          color: AppColor.colorSec,
+          child: Padding(
+            padding: EdgeInsets.only(left: 5.w, top: 30.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomMenu(
+                  ontap: () {
+                    Get.offAllNamed(AppRouts.homeAbn);
+                  },
+                  w: 260.w,
+                  title: "القائمة الرائسية",
+                  icon: Icons.home_outlined,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.fav);
+                  },
+                  w: 240.w,
+                  title: "المفضلات",
+                  icon: Icons.favorite_border,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.save);
+                  },
+                  w: 220.w,
+                  title: "المحفوظات",
+                  icon: Icons.bookmark_outline_outlined,
+                ),
+                CustomMenu(
+                  ontap: ontapSuggest,
+                  w: 200.w,
+                  title: "القصص",
+                  icon: Icons.menu_book_rounded,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.prophet);
+                  },
+                  w: 180.w,
+                  title: "قبل الميلاد",
+                  icon: Icons.auto_awesome,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.messanger);
+                  },
+                  w: 160.w,
+                  title: "الرسل",
+                  icon: Icons.auto_awesome,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.child);
+                  },
+                  w: 140.w,
+                  title: "الاطفال",
+                  icon: Icons.child_care_sharp,
+                ),
+                CustomMenu(
+                  ontap: () {
+                    Get.toNamed(AppRouts.aboutme);
+                  },
+                  w: 120.w,
+                  title: "عنى",
+                  icon: Icons.error,
+                )
+              ],
+            ),
+          )),
+    );
   }
 }

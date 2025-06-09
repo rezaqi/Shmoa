@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:shimoa/controller/home/childdren_controller.dart';
@@ -56,13 +57,14 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               decoration: BoxDecoration(
                   color: AppColor.colorBG,
-                  borderRadius: BorderRadius.circular(20)),
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(20.r))),
               child: GetBuilder<GetNovelsControllerImp>(
                   builder: (controller) => HandlingDataView(
                         statusRequest: co.statusRequest,
                         widget: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 10, left: 10, right: 10),
+                            padding: EdgeInsets.only(
+                                top: 5.h, left: 8.w, right: 8.w),
                             child: LiquidPullToRefresh(
                               onRefresh: () async {
                                 await co.initialData();
@@ -73,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                               color: AppColor.colorSec,
                               animSpeedFactor: 5,
                               showChildOpacityTransition: false,
-                              height: 200,
+                              height: 100.h,
                               child: ListView(
                                 children: [
                                   CustomTitle(
@@ -81,27 +83,20 @@ class _HomePageState extends State<HomePage> {
                                         ? Icons.arrow_back_ios_new_rounded
                                         : Icons.menu,
                                     ontapMenu: () {
-                                      print("tap");
-                                      print(x);
-
                                       if (menu == false) {
-                                        print("enter");
                                         setState(() {
                                           menu = true;
-                                          angel = 0.06;
-                                          x = -2;
-                                          y = 1;
+                                          angel = 0.05.w;
+                                          x = -1.h;
+                                          y = 1.w;
                                           sc = 1.1;
-
-                                          print(x);
                                         });
                                       } else {
-                                        print("else");
                                         setState(() {
                                           menu = false;
-                                          angel = 0;
                                           x = 0;
                                           y = 0;
+                                          angel = 0;
                                           sc = 1;
                                         });
                                       }
@@ -114,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                                     controller: controller.textC,
                                   ),
                                   SizedBox(
-                                    height: 40,
+                                    height: 30.h,
                                   ),
                                   HandlingDataView(
                                       statusRequest: controller.statusRequest,
@@ -130,11 +125,8 @@ class _HomePageState extends State<HomePage> {
                                                   showMore: false,
                                                 ),
                                                 const Popular(),
-                                                const SizedBox(
-                                                  height: 30,
-                                                ),
                                                 SizedBox(
-                                                  height: 50,
+                                                  height: 40.h,
                                                 ),
                                                 ItemTitle(
                                                   ontap: () {
@@ -143,12 +135,12 @@ class _HomePageState extends State<HomePage> {
                                                   title: "مقترحات",
                                                   showMore: true,
                                                 ),
-                                                const SizedBox(
-                                                  height: 10,
+                                                SizedBox(
+                                                  height: 10.h,
                                                 ),
                                                 const Suggest(),
                                                 SizedBox(
-                                                  height: 50,
+                                                  height: 10.h,
                                                 ),
                                                 ItemTitle(
                                                   ontap: () {
@@ -157,14 +149,14 @@ class _HomePageState extends State<HomePage> {
                                                   title: "قبل الميلاد",
                                                   showMore: true,
                                                 ),
-                                                const SizedBox(
-                                                  height: 20,
+                                                SizedBox(
+                                                  height: 10.h,
                                                 ),
                                                 ProPhetsBit(
                                                   c: cProphet,
                                                 ),
                                                 SizedBox(
-                                                  height: 20,
+                                                  height: 10.h,
                                                 ),
                                                 ItemTitle(
                                                   ontap: () {
@@ -173,14 +165,14 @@ class _HomePageState extends State<HomePage> {
                                                   title: "الاطفال",
                                                   showMore: true,
                                                 ),
-                                                const SizedBox(
-                                                  height: 20,
+                                                SizedBox(
+                                                  height: 5.h,
                                                 ),
                                                 ChildBit(
                                                   c: cChild,
                                                 ),
                                                 SizedBox(
-                                                  height: 20,
+                                                  height: 10.h,
                                                 ),
                                                 ItemTitle(
                                                   ontap: () {
@@ -189,14 +181,14 @@ class _HomePageState extends State<HomePage> {
                                                   title: "الرسل",
                                                   showMore: true,
                                                 ),
-                                                const SizedBox(
-                                                  height: 20,
+                                                SizedBox(
+                                                  height: 8.h,
                                                 ),
                                                 MessengersBit(
                                                   c: cMessage,
                                                 ),
                                                 SizedBox(
-                                                  height: Get.height / 10,
+                                                  height: 40.h,
                                                 )
                                               ],
                                             ))

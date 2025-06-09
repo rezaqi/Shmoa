@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:shimoa/controller/controllers_app/save_controller.dart';
@@ -46,7 +47,7 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
         color: AppColor.colorSec,
         animSpeedFactor: 5,
         showChildOpacityTransition: false,
-        height: Get.height / 5,
+        height: 100.h,
         child: Scaffold(
             appBar: AppBar(
               leading: InkWell(
@@ -66,7 +67,7 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                 widget: ListView(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 10.h),
                       child: AnimatedBuilder(
                           animation: _controller,
                           builder: (BuildContext context, Widget? child) {
@@ -87,19 +88,18 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                           ? c.save!.length
                                           : 0,
                                       gridDelegate:
-                                          const SliverGridDelegateWithFixedCrossAxisCount(
+                                          SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
-                                        crossAxisSpacing: 2,
+                                        crossAxisSpacing: 2.w,
                                         mainAxisSpacing: 0,
-                                        mainAxisExtent: 350,
+                                        mainAxisExtent: 300.h,
                                       ),
                                       itemBuilder: (context, index) => Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               SizedBox(
-                                                height: index % 2 == 0
-                                                    ? Get.height / 20
-                                                    : 0,
+                                                height:
+                                                    index % 2 == 0 ? 30.h : 0,
                                               ),
                                               InkWell(
                                                 onTap: () {
@@ -111,7 +111,7 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                 child: Stack(
                                                   children: [
                                                     Container(
-                                                      height: Get.height / 3,
+                                                      height: 250.h,
                                                       width: Get.width / 2,
                                                       margin: const EdgeInsets
                                                           .symmetric(
@@ -122,11 +122,11 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      20)),
+                                                                      20.r)),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.r),
                                                         child: Image.network(
                                                           "${c.data[index].image}",
                                                           fit: BoxFit.cover,
@@ -134,12 +134,12 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                       ),
                                                     ),
                                                     Container(
-                                                      height: Get.height / 3,
+                                                      height: 250.h,
                                                       width: Get.height / 2,
                                                       decoration: BoxDecoration(
                                                           borderRadius:
-                                                              BorderRadius
-                                                                  .circular(20),
+                                                              BorderRadius.circular(
+                                                                  20.r),
                                                           gradient: LinearGradient(
                                                               begin: Alignment
                                                                   .bottomCenter,
@@ -155,8 +155,8 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                               ])),
                                                     ),
                                                     Positioned(
-                                                      bottom: 10,
-                                                      right: 10,
+                                                      bottom: 5.h,
+                                                      right: 5.w,
                                                       child: Container(
                                                         alignment: Alignment
                                                             .centerRight,
@@ -169,9 +169,7 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                           textAlign:
                                                               TextAlign.right,
                                                           style: TextStyle(
-                                                              fontSize: Get.size
-                                                                      .height /
-                                                                  50,
+                                                              fontSize: 13.sp,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w600,
@@ -181,8 +179,8 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                       ),
                                                     ),
                                                     Positioned(
-                                                        top: 5,
-                                                        right: 10,
+                                                        top: 5.h,
+                                                        right: 10.w,
                                                         child: InkWell(
                                                           onTap: () {
                                                             setState(() {
@@ -194,8 +192,8 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                             decoration: BoxDecoration(
                                                                 borderRadius:
                                                                     BorderRadius
-                                                                        .circular(
-                                                                            10),
+                                                                        .circular(10
+                                                                            .r),
                                                                 color: Colors
                                                                     .white
                                                                     .withOpacity(
@@ -203,9 +201,7 @@ class _TopMoreState extends State<Saved> with SingleTickerProviderStateMixin {
                                                             child: Icon(
                                                                 Icons
                                                                     .bookmark_remove_rounded,
-                                                                size: Get.size
-                                                                        .height /
-                                                                    30,
+                                                                size: 20.sp,
                                                                 color: Colors
                                                                     .black),
                                                           ),

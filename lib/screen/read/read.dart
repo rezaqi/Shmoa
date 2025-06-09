@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
@@ -84,7 +85,7 @@ class _ReadPageState extends State<ReadPage> {
           builder: (readController) {
             return SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(8.sp),
                 child: Scrollbar(
                   child: SingleChildScrollView(
                     child: Column(

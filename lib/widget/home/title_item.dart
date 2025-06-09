@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimoa/core/constant/colors.dart';
 
 class ItemTitle extends StatelessWidget {
@@ -12,7 +12,7 @@ class ItemTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: 1.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -20,15 +20,16 @@ class ItemTitle extends StatelessWidget {
               ? InkWell(
                   onTap: ontap,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
                     decoration: BoxDecoration(
                         color: AppColor.colorSec,
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(10.r)),
                     child: Text(
                       "عرض المزيد",
                       style: TextStyle(
                           color: AppColor.bottom,
-                          fontSize: Get.size.height / 50,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -37,7 +38,7 @@ class ItemTitle extends StatelessWidget {
           Text(title,
               style: TextStyle(
                   color: AppColor.colorTex,
-                  fontSize: Get.size.height / 50,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.bold)),
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:shimoa/screen/favorite.dart';
-import 'package:shimoa/screen/home_page.dart';
-import 'package:shimoa/screen/saved.dart';
+import 'package:shimoa/screen/tabs/favorite.dart';
+import 'package:shimoa/screen/tabs/home_page.dart';
+import 'package:shimoa/screen/tabs/saved.dart';
 
 abstract class AbnController extends GetxController {
   goToPage(int i);

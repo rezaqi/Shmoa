@@ -14,6 +14,7 @@ import 'package:shimoa/rout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+//configureDependencies();
   MobileAds.instance.initialize();
   Platform.isAndroid
       ? await Firebase.initializeApp(
@@ -28,7 +29,6 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AudioNovelController()),
-        // يمكنك إضافة المزيد من المزودين هنا
       ],
       child: const MyApp(),
     ),
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(75.1, 160.4),
+        designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {

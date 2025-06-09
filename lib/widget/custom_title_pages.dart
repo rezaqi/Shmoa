@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimoa/core/constant/colors.dart';
 
 class CustomTitlePages extends StatefulWidget {
@@ -24,8 +25,8 @@ class _CustomTitleState extends State<CustomTitlePages> {
   Widget build(BuildContext context) {
     return Text(
       widget.title,
-      style: const TextStyle(
-          fontSize: 30, fontWeight: FontWeight.bold, color: AppColor.title),
+      style: TextStyle(
+          fontSize: 22.sp, fontWeight: FontWeight.bold, color: AppColor.title),
     );
   }
 }

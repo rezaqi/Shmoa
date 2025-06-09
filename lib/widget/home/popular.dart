@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shimoa/controller/home/get_controller.dart';
 import 'package:shimoa/core/constant/colors.dart';
@@ -22,7 +23,7 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
     _controller = AnimationController(
         vsync: this, lowerBound: 0, upperBound: double.infinity);
     _simulation = SpringSimulation(
-        SpringDescription(mass: 10, stiffness: 100, damping: 0), 0, 10, 10);
+        SpringDescription(mass: 8, stiffness: 50, damping: 0), 0, 8, 8);
     _controller.animateWith(_simulation);
     super.initState();
   }
@@ -49,16 +50,15 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.4),
-                    spreadRadius: 3,
-                    blurRadius: 30,
-                    offset: const Offset(
-                        0, 3), // changes the position of the shadow
+                    spreadRadius: 3.r,
+                    blurRadius: 30.r,
+                    offset: Offset(0, 2.h),
                   ),
                 ],
                 color: AppColor.colorSec,
-                borderRadius: BorderRadius.circular(20)),
-            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            height: Get.height / 4,
+                borderRadius: BorderRadius.circular(20.r)),
+            margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 5.w),
+            height: 180.h,
             child: Stack(
               alignment: Alignment.center,
               fit: StackFit.expand,
@@ -79,12 +79,12 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
                           Colors.black,
                           AppColor.colorSec.withOpacity(0),
                         ]),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
                 ),
                 Positioned(
-                  right: 15,
-                  top: 10,
+                  right: 10.w,
+                  top: 10.h,
                   child: Column(
                     children: [
                       InkWell(
@@ -99,7 +99,7 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
                                 : c.favList!.contains("${c.data[6].id}")
                                     ? Colors.redAccent
                                     : Colors.white,
-                            size: Get.size.height / 30,
+                            size: 20.sp,
                           ),
                         ),
                       ),
@@ -109,7 +109,7 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
                           },
                           child: Icon(
                             Icons.bookmark,
-                            size: Get.size.height / 30,
+                            size: 20.sp,
                             color: c.saveList == null
                                 ? Colors.white
                                 : c.saveList!.contains("${c.data[6].id}")
@@ -120,12 +120,12 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
-                  right: 10,
+                  bottom: 5.h,
+                  right: 10.w,
                   child: Text(
                     "${c.data[6].title}",
                     style: TextStyle(
-                        fontSize: Get.size.height / 40,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white.withOpacity(0.8)),
                   ),
@@ -137,9 +137,4 @@ class _PopularState extends State<Popular> with SingleTickerProviderStateMixin {
       ),
     );
   }
-  // }   duration: Duration(seconds: 1),
-  //     decoration: BoxDecoration(
-  //         color: AppColor.colorSec, borderRadius: BorderRadius.circular(20)),
-  //     margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-  //     height: h,
 }

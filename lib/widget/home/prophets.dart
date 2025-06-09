@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shimoa/controller/home/prophets_controller.dart';
 import 'package:shimoa/core/constant/colors.dart';
@@ -47,10 +48,10 @@ class _ProPhetsBitState extends State<ProPhetsBit>
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: 2,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 0,
-                mainAxisExtent: 270,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 10.w,
+                crossAxisSpacing: 5.h,
+                mainAxisExtent: 200.h,
                 crossAxisCount: 2,
               ),
               itemBuilder: (context, index) => Column(
@@ -65,11 +66,11 @@ class _ProPhetsBitState extends State<ProPhetsBit>
                         child: Container(
                           decoration: BoxDecoration(
                               color: AppColor.colorSec,
-                              borderRadius: BorderRadius.circular(20)),
-                          margin: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 10),
-                          height: Get.height / 5,
-                          width: Get.width / 2,
+                              borderRadius: BorderRadius.circular(20.r)),
+                          margin: EdgeInsets.symmetric(
+                              vertical: 5.h, horizontal: 5.w),
+                          height: 160.h,
+                          width: 160.w,
                           child: Hero(
                             tag: "cover${widget.c.data[index].id}",
                             child: ClipRRect(
@@ -81,8 +82,8 @@ class _ProPhetsBitState extends State<ProPhetsBit>
                         ),
                       ),
                       Positioned(
-                        right: 15,
-                        top: 10,
+                        right: 5.w,
+                        top: 10.h,
                         child: Column(
                           children: [
                             InkWell(
@@ -98,7 +99,7 @@ class _ProPhetsBitState extends State<ProPhetsBit>
                                               "${widget.c.data[index].id}")
                                           ? Colors.redAccent
                                           : Colors.white,
-                                  size: Get.size.height / 30,
+                                  size: 20.sp,
                                 ),
                               ),
                             ),
@@ -109,7 +110,7 @@ class _ProPhetsBitState extends State<ProPhetsBit>
                                 },
                                 child: Icon(
                                   Icons.bookmark,
-                                  size: Get.size.height / 30,
+                                  size: 20.sp,
                                   color: widget.c.saveList == null
                                       ? Colors.white
                                       : widget.c.saveList!.contains(
@@ -127,7 +128,7 @@ class _ProPhetsBitState extends State<ProPhetsBit>
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: AppColor.name,
-                        fontSize: Get.size.height / 50,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.bold),
                   )
                 ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimoa/controller/read/audio_controller.dart';
@@ -18,14 +19,14 @@ class TitleRead extends StatelessWidget {
         children: [
           Container(
             //  width: Get.width / 2,
-            margin: const EdgeInsets.symmetric(
-              horizontal: 10,
+            margin: EdgeInsets.symmetric(
+              horizontal: 8.w,
             ),
 
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: 10.h),
             decoration: BoxDecoration(
                 color: AppColor.colorSec,
-                borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(10.r)),
             child: Column(
               children: [
                 Row(
@@ -37,7 +38,7 @@ class TitleRead extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: AppColor.colorTex.withOpacity(0.8),
-                          fontSize: Get.size.height / 40,
+                          fontSize: 18.sp,
                           fontWeight: FontWeight.w600),
                     ),
                     c.novelsModel.audio == ""
@@ -48,7 +49,7 @@ class TitleRead extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 cA.linerPlayer == false
                     ? const SizedBox()
@@ -56,8 +57,8 @@ class TitleRead extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,7 +66,7 @@ class TitleRead extends StatelessWidget {
               c.novelsModel.begin == ''
                   ? Container()
                   : Container(
-                      width: Get.width / 4,
+                      width: 20.w,
                       padding:
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       decoration: BoxDecoration(
@@ -124,7 +125,7 @@ class TitleRead extends StatelessWidget {
                             "النياحة",
                             style: TextStyle(
                                 color: AppColor.colorTex.withOpacity(0.8),
-                                fontSize: Get.size.height / 50,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600),
                           ),
                           Text(
@@ -132,7 +133,7 @@ class TitleRead extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: AppColor.colorTex.withOpacity(0.8),
-                                fontSize: Get.size.height / 40,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600),
                           ),
                         ],
