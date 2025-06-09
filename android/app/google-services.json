@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142892875524",
+    "project_id": "christian-novels",
+    "storage_bucket": "christian-novels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142892875524:android:1274c395dc1090e6519a51",
+        "android_client_info": {
+          "package_name": "com.rezaqi.shimoa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD71RozJzUTSN0q8tHafwtsGnG8Sff-Hi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
